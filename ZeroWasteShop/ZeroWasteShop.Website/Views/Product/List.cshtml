@@ -1,48 +1,12 @@
 ﻿@model ProductListViewModel
-<!--
-<div class="container">
-    <div class="row">
-        <div class="">
 
-        </div>
-    </div>
-</div>
--->
-<!--class="img-thumbnail"-->
 
 <div class="col-sm-12 col-lg-12 col-md-12">
     <h1>@Model.CurrentCategory</h1>
 </div>
 
-<!--
 @foreach (var product in Model.Products)
 {
-    <div class="col-sm-6 col-lg-4 col-md-4">
-        <div class="img-thumbnail">
-            <img src="@product.ImageThumbnailUrl" alt="product thumbnail image" />
-            <div class="figure-caption">
-                <h3 class="float-right">@product.Price.ToString("c")</h3>
-                <h3>@product.Name</h3>
-                <p>@product.Description</p>
-            </div>
-        </div>
-    </div>
-}
--->
-
-@foreach (var product in Model.Products)
-{
-    <div class="col-sm-6 col-lg-4 col-md-4">
-        <div class="card">
-            <img class="card-img-top" src="@product.ImageThumbnailUrl" alt="product thumbnail image" />
-            <div class="card-body">
-                <h3 class="float-right">@product.Price.ToString("c")</h3>
-                <h5 class="card-title">@product.Name</h5>
-                <p class="card-text">@product.Description</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-
+    <partial name="_ProductCard" model="product" />
 
 }

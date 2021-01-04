@@ -1,0 +1,13 @@
+﻿@model Product
+
+<div class="col-sm-6 col-md-4 col-lg-4">
+    <div class="card">
+        <img class="card-img-top" src="@Model.ImageThumbnailUrl" alt="product thumbnail image" />
+        <div class="card-body">
+            <h3 class="float-right">@Model.Price.ToString("c")</h3>
+            <h5 class="card-title">@Model.Name</h5>
+            <p class="card-text">@Model.Description</p>
+            <a class="btn btn-primary" asp-controller="Product" asp-action="Details" asp-route-id="@Model.ProductId">Details</a>
+        </div>
+    </div>
+</div>

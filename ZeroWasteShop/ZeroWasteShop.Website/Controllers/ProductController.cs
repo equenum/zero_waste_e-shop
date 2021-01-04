@@ -21,14 +21,23 @@ namespace ZeroWasteShop.Website.Properties.Controllers
 
         public IActionResult List()
         {
-            //ViewBag.CurrentCategory = "Bestsellers";
-            //return View(_productRepository.GetAllProducts);
-
             var productListViewModel = new ProductListViewModel();
             productListViewModel.Products = _productRepository.GetAllProducts;
-            productListViewModel.CurrentCategory = "Bestsellers";
+            productListViewModel.CurrentCategory = "Bestsellers"; // TODO - Make it work later.
 
             return View(productListViewModel);
+        }
+
+        public IActionResult Details(int id)
+        {
+            var product = _productRepository.GetProductById(id);
+
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            return View(product);
         }
     }
 }

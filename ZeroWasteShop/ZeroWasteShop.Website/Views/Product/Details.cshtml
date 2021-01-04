@@ -1,0 +1,16 @@
+﻿@model Product
+
+
+<div class="col-sm-12 col-lg-12 col-md-12">
+    <h1 style="text-align: center">@Model.Name</h1>
+</div>
+
+<div class="card" style="margin: auto">
+    <img class="my-image-details" alt="@Model.Name" src="@Model.ImageUrl" />
+    <div class="card-body">
+        <h3 class="float-right">@Model.Price.ToString("c")</h3>
+        <h5><a href="#">@Model.Name</a></h5>
+        <p class="details-text">@Model.Description</p>
+    </div>
+</div>
+

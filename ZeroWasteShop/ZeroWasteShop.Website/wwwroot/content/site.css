@@ -4,4 +4,47 @@
 .card-text {
     height: 100px;
     overflow: hidden;
+    text-align: justify;
+    width: 100%;
+}
+
+.card-body {
+    overflow: hidden;
+}
+
+.card-title {
+    height: 45px;
+    overflow: hidden;
+}
+
+.card {
+    margin-bottom: 30px;
+}
+
+.my-image-details {
+    height: 600px;
+    width: 600px;
+}
+
+.details-text {
+    width: 560px;
+    text-align: justify;
+}
+
+.carousel-inner > .carousel-item active > img {
+    width: 600px !important;
+    height: 600px;
+}
+
+.carousel-inner > .carousel-item > img {
+    width: 600px !important;
+    height: 600px;
+}
+
+.carousel-inner img {
+    margin: auto;
+}
+
+.carousel-indicators li {
+    background-color: grey;
 }

@@ -1,0 +1,12 @@
+﻿@model HomeViewModel
+
+<partial name="_Carousel" />
+
+<h2 style="margin: auto">Products On Sale</h2>
+
+<div class="row">
+    @foreach (var product in Model.ProductsOnSale)
+    {
+        <partial name="_ProductCard" model="product" />
+    }
+</div>
