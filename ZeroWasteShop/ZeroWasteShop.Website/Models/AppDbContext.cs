@@ -14,6 +14,7 @@ namespace ZeroWasteShop.Website.Models
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,25 +26,6 @@ namespace ZeroWasteShop.Website.Models
             modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 4, CategoryName = "Trash Reducing Product" });
             modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 5, CategoryName = "Vacuum Flask Product" });
 
-            /*
-             modelBuilder.Entity<Product>().HasData(new Product
-            {
-                ProductId = ,
-                Name = "",
-                Price = 4.95M,
-                Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " +
-                "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation " +
-                "ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
-                "in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat " +
-                "non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                CategoryId = ,
-                ImageUrl = "",
-                ImageThumbnailUrl = "",
-                IsInStock = true,
-                IsOnSale = false
-            });
-             
-             */
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 ProductId = 1,
