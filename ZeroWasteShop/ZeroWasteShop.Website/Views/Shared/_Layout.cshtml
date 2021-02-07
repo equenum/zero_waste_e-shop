@@ -25,6 +25,9 @@
                         <a class="nav-link" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a> <!-- Add action go to home page-->
                     </li>
                     @await Component.InvokeAsync("CategoryMenu")
+                    <li class="nav-item">
+                        <a class="nav-link" asp-controller="Contact" asp-action="Index">Contact <span class="sr-only">(current)</span></a> <!-- Add action go to home page-->
+                    </li>
                     @await Component.InvokeAsync("ShoppingCartSummary")
                 </ul>
                 <!-- Search form. Don't need it for now. -->
