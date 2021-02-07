@@ -8,6 +8,7 @@
             <h5 class="card-title">@Model.Name</h5>
             <p class="card-text">@Model.Description</p>
             <a class="btn btn-primary" asp-controller="Product" asp-action="Details" asp-route-id="@Model.ProductId">Details</a>
+            <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-productId="@Model.ProductId">Add to Cart</a>
         </div>
     </div>
 </div>

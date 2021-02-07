@@ -19,13 +19,30 @@ namespace ZeroWasteShop.Website.Properties.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        public IActionResult List()
+        public ViewResult List(string category)
         {
-            var productListViewModel = new ProductListViewModel();
-            productListViewModel.Products = _productRepository.GetAllProducts;
-            productListViewModel.CurrentCategory = "Bestsellers"; // TODO - Make it work later.
+            IEnumerable<Product> products;
+            string currentCategory;
 
-            return View(productListViewModel);
+            if (string.IsNullOrEmpty(category))
+            {
+                products = _productRepository.GetAllProducts.OrderBy(c => c.ProductId);
+                currentCategory = "All Products";
+            }
+            else
+            {
+                products = _productRepository.GetAllProducts
+                    .Where(c => c.Category.CategoryName == category);
+
+                currentCategory = _categoryRepository.GetAllCategories
+                    .FirstOrDefault(c => c.CategoryName == category)?.CategoryName;
+            }
+
+            return View(new ProductListViewModel
+            {
+                Products = products,
+                CurrentCategory = currentCategory
+            });
         }
 
         public IActionResult Details(int id)

@@ -9,8 +9,6 @@
     <script src="~/lib/bootstrap/js/bootstrap.js"></script>
     <link href="~/content/site.css" rel="stylesheet" />
 
-
-
     <title>@ViewBag.Title</title>
 </head>
 <body>
@@ -23,24 +21,11 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" asp-controller="Home" asp-action="Index">Home <span class="sr-only">(current)</span></a> <!-- Add action go to home page-->
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-controller="Product" asp-action="List">All products</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-
+                    @await Component.InvokeAsync("CategoryMenu")
+                    @await Component.InvokeAsync("ShoppingCartSummary")
                 </ul>
                 <!-- Search form. Don't need it for now. -->
                 <form class="form-inline my-2 my-lg-0">
@@ -50,9 +35,6 @@
                 <!-- Search form end. -->
             </div>
         </nav>
-
-
-
 
         <div class="row">
             @RenderBody()

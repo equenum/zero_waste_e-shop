@@ -11,6 +11,7 @@
         <h3 class="float-right">@Model.Price.ToString("c")</h3>
         <h5><a href="#">@Model.Name</a></h5>
         <p class="details-text">@Model.Description</p>
+        <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-productId="@Model.ProductId">Add to Cart</a>
     </div>
 </div>
 
