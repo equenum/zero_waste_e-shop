@@ -3,7 +3,7 @@
 @if (Model.ShoppingCart.ShoppingCartItems.Count > 0)
 {
     <li class="nav-item active">
-        <a class="nav-link" asp-controller="" asp-action="">Cart
+        <a class="nav-link" asp-controller="ShoppingCart" asp-action="Index">Cart
             <span id="cart-status" style="font-weight:bold">@Model.ShoppingCart.ShoppingCartItems.Count</span>
         </a>
     </li>

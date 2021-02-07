@@ -57,5 +57,25 @@ namespace ZeroWasteShop.Website.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public RedirectToActionResult IncreaseAmount(int productId)
+        {
+            var selectedProduct = _productRepository.GetAllProducts
+                .FirstOrDefault(c => c.ProductId == productId);
+
+            if (selectedProduct != null)
+            {
+                _shoppingCart.IncreaseAmount(selectedProduct);
+            }
+
+            return RedirectToAction("Index");
+        }
+
+        public RedirectToActionResult ClearCart()
+        {
+            _shoppingCart.ClearCart();
+
+            return RedirectToAction("Index");
+        }
     }
 }

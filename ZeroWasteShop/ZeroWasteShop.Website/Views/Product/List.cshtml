@@ -1,12 +1,9 @@
 ﻿@model ProductListViewModel
 
-
 <div class="col-sm-12 col-lg-12 col-md-12">
     <h1>@Model.CurrentCategory</h1>
 </div>
-
 @foreach (var product in Model.Products)
 {
     <partial name="_ProductCard" model="product" />
-
 }

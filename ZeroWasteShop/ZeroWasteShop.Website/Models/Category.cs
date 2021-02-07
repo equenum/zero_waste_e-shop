@@ -11,14 +11,5 @@ namespace ZeroWasteShop.Website.Models
         public string CategoryName { get; set; }
         public string CategoryDescription { get; set; }
         public List<Product> Products { get; set; }
-
-        /* // TODO - Delete later
-        public Category(int categoryId, string categoryName, string categoryDescription)
-        {
-            CategoryId = categoryId;
-            CategoryName = categoryName;
-            CategoryDescription = categoryDescription;
-        }
-        */
     }
 }

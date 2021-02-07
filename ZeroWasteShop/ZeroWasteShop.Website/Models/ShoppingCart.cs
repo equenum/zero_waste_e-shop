@@ -82,6 +82,25 @@ namespace ZeroWasteShop.Website.Models
             return localAmount;
         }
 
+        public int IncreaseAmount(Product product)
+        {
+            var shoppingCartItem = _appDbContext.ShoppingCartItems
+                .SingleOrDefault(
+                s => s.Product.ProductId == product.ProductId && s.ShoppingCartId == ShoppingCartId);
+
+            var localAmount = 0;
+
+            if (shoppingCartItem != null)
+            {
+                shoppingCartItem.Amount++;
+                localAmount = shoppingCartItem.Amount;
+            }
+
+            _appDbContext.SaveChanges();
+
+            return localAmount;
+        }
+
         public List<ShoppingCartItem> GetShoppingCartItems()
         {
             return ShoppingCartItems ?? (ShoppingCartItems = _appDbContext.ShoppingCartItems
