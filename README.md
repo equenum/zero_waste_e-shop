@@ -19,7 +19,7 @@ There are some additional project details (architecture, technologies/patterns u
 - Bootstrap (v4.5.3);
 - Repository pattern;
 - View form input validation (ASP.NET Core DataAnnotations);
-- Custom tag helper;
+- Custom tag helper.
 
 # P.s.
 
